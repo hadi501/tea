@@ -1,11 +1,14 @@
 window.addEventListener('load', function(){
     const form = document.querySelector('.form');
     const image = document.querySelector('.image');
+    const card = document.querySelector('.card');
     
     
     form.classList.add('in');
     
     image.classList.add('in');
+
+    card.classList.add('in');
 })
 
 
@@ -31,11 +34,7 @@ function fadeOutEffect() {
         }
         setTimeout(() => {
             window.location.href = 'index.html'
-        }, 500)
-        
-         
-        
+        }, 500) 
     }, 50);
     
 }
-

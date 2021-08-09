@@ -1,9 +1,103 @@
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Ghost | Index</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="indexstyles.css">
 </head>
 <body>
-<a href="login.html" class="btn btn-danger">Keluar</a>
+    <div id="container">
+        <div class="row">
+            <div class="col">
+              <h1><b>Data Tabel Semua Rapat</b></h1>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn" onclick="fadeOutEffect()">Keluar</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+                <p></p>
+            </div>
+            <div class="col-6">
+                <p></p>
+            </div>
+          </div>
+
+          <div class="row">
+              <div class="col-12">
+                <div class="card w-75 kiri">
+                    <div class="card-body">
+                        <table>
+                            <tr>
+                                <th><h4 class="card-title">Rapat Umum</h4></th>
+                                <th></th>
+                                <th class="nomer">221593</th>
+                            </tr>
+                            <tr>
+                                <th class="admin"><p class="card-text">Penyelenggara</p></th>
+                                <td class="nama"><p class="card-text">: Muhammad Abdul Setiawan Putra, S.H</p></td>
+                            </tr>
+                            <tr>
+                                <th class="admin"><p class="card-text">Host</p></th>
+                                <td class="nama"><p class="card-text">: Ahmad Syahputra, S.pd</p></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><button class="btn button">Join</button></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+              </div>
+          </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script>
+
+    for(var i =1; i<= 10; i++){
+    $('#target').append('<div id="r'+ i +'" class="ansbox"></div>')
+        }
+
+        var numItems = $('.card').length
+        
+        for ( let i = 0; i < numItems; i++) {
+             window.addEventListener('load', function(){
+                setTimeout(() => {
+             var card = document.querySelector('.kiri');
+
+             card.classList.add('in');
+             card.classList.remove("kiri");
+             card.classList.add("kanan");
+
+            }, 150 * i)
+            })
+        }
+
+        function fadeOutEffect() {
+        var numItems = $('.card').length
+        var fadeTarget = document.getElementById("container");
+        var fadeEffect = setInterval(function () {
+        
+        for ( let i = 0; i < numItems; i++) {
+        setTimeout(() => {
+        const card = document.querySelector(".kanan");
+        card.classList.remove("kanan")
+        card.classList.remove("in");
+        card.classList.add("out");
+            }, 150 * i)
+        }
+        }, 100);
+        
+
+        setTimeout(() => {
+            window.location.href = 'login.html'
+        }, 500)
+        
+        }
+    
+    </script>
 </body>
 </html>

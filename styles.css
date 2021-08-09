@@ -7,7 +7,7 @@ body{
 
 .col-6{
     color: aliceblue;
-    padding-top: 15%;
+    padding-top: 10%;
 }
 
 .col-6 img{
@@ -49,10 +49,6 @@ body{
     opacity: 1;
 }
 
-.image.out{
-    transform: translateX(-30);
-}
-
 .form{
     transition: 1s;
     opacity: 0;
@@ -62,8 +58,4 @@ body{
 .form.in{
     transform: translateX(0);
     opacity: 1;
-}
-
-.form.out{
-    transform: translateX(30);
 }
