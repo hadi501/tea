@@ -8,7 +8,6 @@ window.addEventListener('load', function(){
     
     image.classList.add('in');
 
-    card.classList.add('in');
 })
 
 

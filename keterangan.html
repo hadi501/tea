@@ -1,0 +1,175 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Ghost | Index</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="keteranganstyles.css">
+
+</head>
+<body>
+    <div id="container">
+        <div class="row">
+            <div class="col">
+              <h1><b>Halaman Detail Rapat</b></h1>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn" onclick="fadeOutEffect()">Kembali</button>
+            </div>
+          </div>
+
+          <div class="row">
+              <div class="col-12">
+                <div class="card kiri">
+                    <div class="card-header">
+                      <h4>Detail Rapat</h4>
+                    </div>
+                    <div class="card-body">
+                      <blockquote class="blockquote mb-0">
+                        <table>
+                            <tr>
+                                <th><p>Subjek</p></th>
+                                <td id="subjek"></td>
+                            </tr>
+                            <tr>
+                                <th><p>Penyelenggara</p></th>
+                                <td id="penyelenggara"></td>
+                            </tr>
+                            <tr>
+                                <th><p>Host</p></th>
+                                <td id="host"></td>
+                            </tr>
+                            <tr>
+                                <th><p>ID Rapat</p></th>
+                                <td id="id"></td>
+                            </tr>
+                            <tr>
+                                <th><p>Tautan Rapat</p></th>
+                                <td>https://www.google.com</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><button class="btn button" onclick="pindah()">Join</button></td>
+                            </tr>
+                        </table>
+                        <!-- <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer> -->
+                      </blockquote>
+                    </div>
+                  </div>
+              </div>
+          </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script>
+    var url_string = window.location;
+    var url = new URL(url_string);
+
+    var subjek = url.searchParams.get("subjek_rapat");
+    var a = document.getElementById("subjek");
+    a.innerHTML= subjek ;
+
+    var id = url.searchParams.get("id");
+    var b = document.getElementById("id");
+    b.innerHTML= id ;
+
+    var penyelenggara = url.searchParams.get("penyelenggara");
+    var c = document.getElementById("penyelenggara");
+    c.innerHTML= penyelenggara ;
+
+    var host = url.searchParams.get("host");
+    var d = document.getElementById("host");
+    d.innerHTML= host ;
+
+        var items = [
+            ["Rapat Khusus","027663","Muhammad Abdul Kurniawan Putra S.E","Ahmad Paris Nur Rozak M.Sc"],
+            ["Rapat Umum","024552","Muhammad Fattah Masyhuri S.H","Paris Nur Rozak S.Pd"]
+        ];
+
+
+$(document).ready(function() {
+//Preloader
+preloaderFadeOutTime = 1000;
+function hidePreloader() {
+var preloader = $('.pre-loader');
+preloader.fadeOut(preloaderFadeOutTime);
+}
+hidePreloader();
+});
+
+        let content = '';
+
+        // items.forEach(p => {
+        //     content += `
+        //         <div id="kartu" class="card w-75 kiri">
+        //             <div class="card-body">
+        //                 <table>
+        //                     <tr>
+        //                         <th><h4 class="card-title" id="judul">${p[0]}</h4></th>
+        //                         <th></th>
+        //                         <th class="nomer" id="id">${p[1]}</th>
+        //                     </tr>
+        //                     <tr>
+        //                         <th class="admin"><p class="card-text">Penyelenggara</p></th>
+        //                         <td class="nama"><p class="card-text">: ${p[2]}</p></td>
+        //                     </tr>
+        //                     <tr>
+        //                         <th class="admin"><p class="card-text">Host</p></th>
+        //                         <td class="nama"><p class="card-text">: ${p[3]}</p></td>
+        //                     </tr>
+        //                     <tr>
+        //                         <td colspan="3"><button class="btn button" onclick="pindah()">Join</button></td>
+        //                     </tr>
+        //                 </table>
+        //             </div>
+        //         </div>
+        //     `
+            
+        // });
+        //    $(".col-12").append(content);
+
+            // function pindah(){
+            //     var judul = document.getElementById("judul");
+            //     var queryString = "?subjek_rapat=" + judul;
+            //     window.location.href = "coba.html" + queryString;
+            // }
+        
+        var numItems = $('.card').length
+        for ( let i = 0; i < numItems; i++) {
+             window.addEventListener('load', function(){
+                setTimeout(() => {
+             var card = document.querySelector('.kiri');
+
+             card.classList.add('in');
+             card.classList.remove("kiri");
+             card.classList.add("kanan");
+
+            }, 150 * i)
+            })
+        }
+    
+
+        function fadeOutEffect() {
+        var numItems = $('.card').length
+        var fadeTarget = document.getElementById("container");
+        var fadeEffect = setInterval(function () {
+        
+        for ( let i = 0; i < numItems; i++) {
+        setTimeout(() => {
+        const card = document.querySelector(".kanan");
+        card.classList.remove("kanan")
+        card.classList.remove("in");
+        card.classList.add("out");
+            }, 150 * i)
+        }
+        }, 100);
+        
+
+        setTimeout(() => {
+            window.location.href = 'index.html'
+        }, 500)
+        
+        }
+    
+    </script>
+</body>
+</html>

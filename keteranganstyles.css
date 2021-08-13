@@ -1,0 +1,93 @@
+body{
+    background-image: url(assets/images/background.png);
+    background-size: cover;
+    margin-bottom: 5%;
+    
+}
+
+#container{
+    width: 70%;
+    margin: auto;
+}
+
+.row{
+    padding-top: 20px;
+}
+
+h1{
+    color: aliceblue;
+}
+
+.col{
+    padding-top: 50px;
+    color: aliceblue;
+}
+.col button{
+    color: white;
+    font-weight: bold;
+    float: right;
+    width: 150px;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(17,17,80,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+.card{
+    margin: auto;
+    color: aliceblue;
+    background: rgb(14,54,54);
+    background: linear-gradient(0deg, rgba(14,54,54,0.7) 0%, rgba(11,75,75,0.7) 100%);
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: 0.7s;
+    opacity: 0;
+    transform: translateX(0);
+}
+
+.card.in{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.card.out{
+    transform: translateX(0);
+    opacity: 0;
+}
+
+.card button{
+    color: white;
+    font-weight: bold;
+    float: right;
+    width: 150px;
+    background: rgb(60,15,15);
+    background: linear-gradient(0deg, rgba(60,15,15,1) 0%, rgba(21,160,27,1) 100%);
+    border-radius: 20px;
+}
+
+h4{
+    font-weight: bold;
+}
+
+table{
+    width: 100%;
+    color: white;
+}
+
+table td{
+    width: 75%;
+}
+
+table button{
+    float: right;
+}
+
+.admin{
+    width: 25%;
+}
+
+.nama{
+    width: 50%;
+}
+
+.nomer{
+    float: right;
+}

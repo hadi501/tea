@@ -6,8 +6,25 @@
     <title>Portal Ghost | Index</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="indexstyles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
+    <div class="pre-loader">
+        <div class="sk-fading-circle">
+          <div class="sk-circle1 sk-circle"></div>
+          <div class="sk-circle2 sk-circle"></div>
+          <div class="sk-circle3 sk-circle"></div>
+          <div class="sk-circle4 sk-circle"></div>
+          <div class="sk-circle5 sk-circle"></div>
+          <div class="sk-circle6 sk-circle"></div>
+          <div class="sk-circle7 sk-circle"></div>
+          <div class="sk-circle8 sk-circle"></div>
+          <div class="sk-circle9 sk-circle"></div>
+          <div class="sk-circle10 sk-circle"></div>
+          <div class="sk-circle11 sk-circle"></div>
+          <div class="sk-circle12 sk-circle"></div>
+        </div>
+      </div>
     <div id="container">
         <div class="row">
             <div class="col">
@@ -15,6 +32,7 @@
             </div>
             <div class="col">
               <button type="button" class="btn btn" onclick="fadeOutEffect()">Keluar</button>
+              <!-- <button id="add" type="button" class="btn btn" onclick="">Add</button> -->
             </div>
           </div>
 
@@ -23,81 +41,17 @@
                 <p></p>
             </div>
             <div class="col-6">
-                <p></p>
+                <p>
+                </p>
             </div>
           </div>
 
           <div class="row">
               <div class="col-12">
-                <div class="card w-75 kiri">
-                    <div class="card-body">
-                        <table>
-                            <tr>
-                                <th><h4 class="card-title">Rapat Umum</h4></th>
-                                <th></th>
-                                <th class="nomer">221593</th>
-                            </tr>
-                            <tr>
-                                <th class="admin"><p class="card-text">Penyelenggara</p></th>
-                                <td class="nama"><p class="card-text">: Muhammad Abdul Setiawan Putra, S.H</p></td>
-                            </tr>
-                            <tr>
-                                <th class="admin"><p class="card-text">Host</p></th>
-                                <td class="nama"><p class="card-text">: Ahmad Syahputra, S.pd</p></td>
-                            </tr>
-                            <tr>
-                                <td colspan="3"><button class="btn button">Join</button></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
+                
               </div>
           </div>
     </div>
-    <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
-    <script>
-
-    for(var i =1; i<= 10; i++){
-    $('#target').append('<div id="r'+ i +'" class="ansbox"></div>')
-        }
-
-        var numItems = $('.card').length
-        
-        for ( let i = 0; i < numItems; i++) {
-             window.addEventListener('load', function(){
-                setTimeout(() => {
-             var card = document.querySelector('.kiri');
-
-             card.classList.add('in');
-             card.classList.remove("kiri");
-             card.classList.add("kanan");
-
-            }, 150 * i)
-            })
-        }
-
-        function fadeOutEffect() {
-        var numItems = $('.card').length
-        var fadeTarget = document.getElementById("container");
-        var fadeEffect = setInterval(function () {
-        
-        for ( let i = 0; i < numItems; i++) {
-        setTimeout(() => {
-        const card = document.querySelector(".kanan");
-        card.classList.remove("kanan")
-        card.classList.remove("in");
-        card.classList.add("out");
-            }, 150 * i)
-        }
-        }, 100);
-        
-
-        setTimeout(() => {
-            window.location.href = 'login.html'
-        }, 500)
-        
-        }
-    
-    </script>
+    <script src="indexscrib.js"></script>
 </body>
 </html>
