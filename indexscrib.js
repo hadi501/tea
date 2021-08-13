@@ -53,10 +53,8 @@ function buat(i) {
                 </div>
             `
 
-
-    $(".col-12").append(content);
-
-}
+        $(".col-12").append(content);
+    }
 
 var numItems = $('.card').length
 for (let i = 0; i < numItems; i++) {
@@ -69,13 +67,13 @@ for (let i = 0; i < numItems; i++) {
 
 function baru(){
     var card = document.querySelector('.kiri');
-            card.classList.add('in');
-            card.classList.remove("kiri");
-            card.classList.add("kanan");
+        card.classList.add('in');
+        card.classList.remove("kiri");
+        card.classList.add("kanan");
 
-            setTimeout(() => {
-                card.classList.add("up");
-            }, 450 * (i + 1))
+        setTimeout(() => {
+            card.classList.add("up");
+        }, 450 * (i + 1))
 }
 
 setTimeout(() => {
@@ -95,7 +93,14 @@ setTimeout(() => {
 }, 3000)
 
 function tambah(){
-    buat();
+    id.push("074");
+    items.push("Rapat Komisi", "Febrian Miftah Ramdhani S.I", "Ilham Muhammad Raffi S.H");
+    for (var i = id.length-1; i < id.length; i++) {
+        buat(i);
+        setTimeout(() => {
+            baru();
+        }, 300 * i)
+    }
 }
 
 console.log(id);
