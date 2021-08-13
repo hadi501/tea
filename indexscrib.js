@@ -47,7 +47,6 @@ function buat(i) {
                                     onclick="window.location.href = 'keterangan.html' +
                                     '?subjek_rapat=' + '${items[i][0]}' + '&id=' + '${id[i]}' + '&penyelenggara=' + '${items[i][1]}' + '&host=' + '${items[i][2]}'
                                     ">Join</button></td>
-                                <td><button class="btn btn delete" onclick="">Delete</button></td>
                             </tr>
                         </table>
                     </div>
@@ -95,11 +94,14 @@ setTimeout(() => {
     }
 }, 3000)
 
+function tambah(){
+    buat();
+}
+
 console.log(id);
 function fadeOutEffect() {
     var numItems = $('.card').length
-    var fadeTarget = document.getElementById("container");
-    var fadeEffect = setInterval(function () {
+    setInterval(function () {
 
         for (let i = 0; i < numItems; i++) {
             setTimeout(() => {
