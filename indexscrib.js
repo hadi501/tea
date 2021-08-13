@@ -52,8 +52,12 @@ function buat(i) {
                     </div>
                 </div>
             `
-
-        $(".col-12").append(content);
+        if (i < id.length){
+            $(".col-12").append(content);
+        }
+        if(i == id.length-1){
+            $(".col-12").prepend(content);
+        }
     }
 
 var numItems = $('.card').length
@@ -99,7 +103,7 @@ function tambah(){
         buat(i);
         setTimeout(() => {
             baru();
-        }, 300 * i)
+        }, 100 * i)
     }
 }
 
